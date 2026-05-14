@@ -1,0 +1,90 @@
+---
+const projects = [
+  {
+    title: 'RSF Vendor Form',
+    description: 'WordPress plugin for vendor applications with AWS S3 file uploads, Google Sheets integration, and dynamic pricing calculator. Handles booth reservations for the Rolando Street Fair.',
+    tags: ['WordPress', 'PHP', 'AWS S3', 'Google Sheets', 'Composer'],
+    link: null,
+    featured: true,
+  },
+  {
+    title: 'Simple Email Capture',
+    description: 'Lightweight WordPress plugin for AJAX-powered email collection. Saves to a custom database table with a full admin dashboard, exportable list, and configurable shortcode.',
+    tags: ['WordPress', 'PHP', 'jQuery', 'MySQL'],
+    link: null,
+    featured: false,
+  },
+  {
+    title: 'TanStack Start App',
+    description: 'Full-stack React application using TanStack Start with SSR, file-based routing, and Tailwind CSS. Explores modern React patterns with type-safe routing and server-side data fetching.',
+    tags: ['React', 'TypeScript', 'TanStack Router', 'Tailwind', 'SSR'],
+    link: null,
+    featured: true,
+  },
+  {
+    title: 'Contact Merger',
+    description: 'Python CLI utility that merges contact data from multiple Excel sources (MailChimp, ZipList) into an enhanced primary contact list using smart name and address matching.',
+    tags: ['Python', 'pandas', 'openpyxl', 'CLI'],
+    link: null,
+    featured: false,
+  },
+  {
+    title: 'DevNotes Knowledge Base',
+    description: 'Published Dendron knowledge vault covering web development, cloud, security, and hardware. Automatically deployed to GitHub Pages via CI/CD.',
+    tags: ['Dendron', 'GitHub Actions', 'GitHub Pages', 'Markdown'],
+    link: 'https://rperez2021.github.io/DevNotes/',
+    featured: false,
+  },
+  {
+    title: 'Rolando Community Council',
+    description: 'WordPress site for a community organization with event management, vendor registration via Gravity Forms, and Stripe payment integration for the Rolando Street Fair.',
+    tags: ['WordPress', 'Gravity Forms', 'Stripe', 'PHP'],
+    link: null,
+    featured: true,
+  },
+];
+---
+
+<section id="projects" class="py-24 border-t border-[var(--color-border)]">
+  <div class="mx-auto max-w-5xl px-6">
+    <p class="font-mono text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3">Projects</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-4">Things I've built</h2>
+    <p class="text-[var(--color-muted)] mb-12 max-w-xl">
+      A selection of projects from client work, personal tools, and open-source contributions.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projects.map((project) => (
+        <div class={`rounded-xl border bg-[var(--color-surface)] p-6 flex flex-col hover:border-[var(--color-accent)]/40 transition-colors duration-300 ${project.featured ? 'border-[var(--color-accent)]/30' : 'border-[var(--color-border)]'}`}>
+          <div class="flex items-start justify-between mb-4">
+            <svg width="28" height="28" fill="none" stroke="var(--color-accent)" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"/>
+            </svg>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
+                aria-label="View project"
+              >
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                </svg>
+              </a>
+            )}
+          </div>
+          <h3 class="text-base font-semibold text-[var(--color-text)] mb-2">{project.title}</h3>
+          <p class="text-sm text-[var(--color-muted)] leading-relaxed flex-1 mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-1.5">
+            {project.tags.map((tag) => (
+              <span class="font-mono text-xs text-[var(--color-muted)] bg-[var(--color-tag-bg)] px-2 py-0.5 rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

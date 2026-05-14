@@ -1,0 +1,117 @@
+---
+const jobs = [
+  {
+    title: 'Onboarding Engineering Manager',
+    company: 'Selfbook',
+    period: 'Apr 2023 – Present',
+    type: 'Full-time',
+    bullets: [
+      'Developed JavaScript libraries and plugins to seamlessly integrate a SaaS booking product into diverse customer websites across different platforms and browsers.',
+      'Utilized RESTful APIs to establish secure, reliable communication between customer sites and the SaaS platform.',
+      'Conducted thorough testing and troubleshooting of integrated solutions, identifying compatibility issues and ensuring smooth deployments.',
+      'Documented integration processes, APIs, and best practices to ensure knowledge transfer within the team.',
+      'Provided technical support and guidance to customers and internal teams on customizing the SaaS software.',
+    ],
+    tags: ['JavaScript', 'TypeScript', 'REST APIs', 'SaaS Integration', 'React'],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Selfbook',
+    period: 'May 2022 – Apr 2023',
+    type: 'Full-time',
+    bullets: [
+      'Developed custom integration scripts in JavaScript to facilitate connectivity between customer websites and the SaaS product.',
+      'Conducted end-to-end QA testing and compatibility checks across different browsers and devices.',
+      'Collaborated closely with the onboarding team to tailor integration solutions for new clients.',
+    ],
+    tags: ['JavaScript', 'QA Testing', 'Cross-browser', 'Node.js'],
+  },
+  {
+    title: 'Web Developer & Owner',
+    company: 'Brevity Is',
+    period: 'Apr 2018 – May 2022',
+    type: 'Owner',
+    bullets: [
+      'Built responsive, user-friendly websites for small businesses and nonprofits using WordPress, PHP, JavaScript, and HTML/CSS.',
+      'Developed custom full-stack applications with React and Vue frontends, Node and .NET backends — 100% on-time delivery.',
+      'Grew client portfolio 300% year-over-year through strong client relationships and technical consulting.',
+      'Created pixel-perfect PSD-to-WordPress builds using Elementor, Divi, and Visual Composer.',
+    ],
+    tags: ['React', 'Vue', 'Node.js', 'WordPress', 'PHP', 'AWS'],
+  },
+  {
+    title: 'Client Manager',
+    company: 'Allied Universal',
+    period: 'Oct 2015 – Apr 2018',
+    type: 'Full-time',
+    bullets: [
+      'Managed 42 client accounts and 200+ Security Professionals.',
+      'Reduced overtime costs 3% and increased profitability 6%.',
+      'Generated $8M in revenue and $2M in profit; retained accounts through a major corporate merger.',
+    ],
+    tags: ['Client Management', 'Operations', 'P&L'],
+  },
+  {
+    title: 'Fire Direction Controller',
+    company: 'U.S. Marine Corps',
+    period: 'Jun 2002 – Jun 2006',
+    type: 'Active Duty',
+    bullets: [
+      'Accurately processed complex targeting data for the safe firing of 20,000+ artillery rounds.',
+      'Supervised and developed an 8-member team into a cohesive, disciplined unit.',
+      'Managed a battery warehouse containing $10M+ in equipment (MOS 0844).',
+    ],
+    tags: ['Leadership', 'High-stakes Operations', 'Team Development'],
+  },
+];
+---
+
+<section id="experience" class="py-24 border-t border-[var(--color-border)]">
+  <div class="mx-auto max-w-5xl px-6">
+    <p class="font-mono text-[var(--color-accent)] text-xs tracking-widest uppercase mb-3">Experience</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-12">Where I've worked</h2>
+
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 top-2 bottom-2 w-px bg-[var(--color-border)] hidden md:block ml-[7px]"></div>
+
+      <div class="space-y-12">
+        {jobs.map((job) => (
+          <div class="md:pl-10 relative group">
+            <!-- Timeline dot -->
+            <div class="absolute left-0 top-2 w-3.5 h-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)] hidden md:block group-hover:bg-[var(--color-accent)] transition-colors"></div>
+
+            <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-accent)]/40 transition-colors duration-300">
+              <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                <div>
+                  <h3 class="text-lg font-semibold text-[var(--color-text)]">{job.title}</h3>
+                  <p class="text-[var(--color-accent)] font-medium text-sm">{job.company}
+                    <span class="text-[var(--color-muted)] font-normal"> · {job.type}</span>
+                  </p>
+                </div>
+                <span class="font-mono text-xs text-[var(--color-muted)] bg-[var(--color-tag-bg)] px-3 py-1 rounded-full whitespace-nowrap">
+                  {job.period}
+                </span>
+              </div>
+              <ul class="space-y-2 mb-4">
+                {job.bullets.map((b) => (
+                  <li class="flex gap-3 text-sm text-[var(--color-muted)] leading-relaxed">
+                    <span class="text-[var(--color-accent)] mt-1.5 shrink-0">▹</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                {job.tags.map((tag) => (
+                  <span class="font-mono text-xs text-[var(--color-accent)] bg-[var(--color-tag-bg)] px-2.5 py-1 rounded-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

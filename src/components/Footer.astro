@@ -1,0 +1,20 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-border)] py-8">
+  <div class="mx-auto max-w-5xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="font-mono text-xs text-[var(--color-muted)]">
+      © {year} Roberto Perez · Built with Astro
+    </p>
+    <a
+      href="#hero"
+      class="font-mono text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors flex items-center gap-1.5"
+    >
+      Back to top
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+      </svg>
+    </a>
+  </div>
+</footer>
