@@ -3,7 +3,10 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
 
+/* ── Dark mode (default) ── */
+:root {
   --color-bg: #0f1117;
   --color-surface: #181c27;
   --color-border: #252a38;
@@ -14,6 +17,18 @@
   --color-tag-bg: #1e2336;
 }
 
+/* ── Light mode ── */
+html.light {
+  --color-bg: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-border: #dde1ea;
+  --color-accent: #2563eb;
+  --color-accent-dim: #1d4ed8;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-tag-bg: #e8edf5;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,6 +37,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {

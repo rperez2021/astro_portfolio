@@ -26,6 +26,12 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <!-- Prevent flash: apply saved theme before first paint -->
+    <script is:inline>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
+    </script>
   </head>
   <body class="min-h-screen antialiased">
     <slot />
